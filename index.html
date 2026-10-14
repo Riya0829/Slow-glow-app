@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Slow Glow — Skincare Efficacy Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Mono:wght@400;500&family=Figtree:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <noscript>
+      <p class="banner">This app needs JavaScript. Please open it in a normal browser such as Chrome or Safari.</p>
+    </noscript>
+
+    <div id="err" class="banner tone-bad" hidden>
+      <p><strong>Something went wrong.</strong> <span></span></p>
+    </div>
+
+    <header class="top">
+      <div class="brandbox">
+        <div class="brand-row">
+          <h1>Slow Glow</h1>
+          <span id="syncBadge" class="sync-badge" title="Storage status">Local</span>
+        </div>
+        <p class="tag">Find out if your skincare is actually working</p>
+      </div>
+      <div class="top-actions">
+        <button id="themeBtn" class="iconbtn" type="button" aria-label="Toggle dark or light mode" title="Toggle theme">
+          <span id="themeIcon" aria-hidden="true">◐</span>
+        </button>
+        <button id="helpBtn" class="helpbtn" type="button" aria-label="Help and support">
+          <span aria-hidden="true">?</span>Help
+        </button>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button class="tab" role="tab" data-tab="journey" aria-selected="true" type="button">Journey</button>
+      <button class="tab" role="tab" data-tab="checkin" aria-selected="false" type="button">Check in</button>
+      <button class="tab" role="tab" data-tab="progress" aria-selected="false" type="button">Progress</button>
+      <button class="tab" role="tab" data-tab="perks" aria-selected="false" type="button">Perks</button>
+    </nav>
+
+    <main>
+      <section id="v-journey" data-view></section>
+      <section id="v-checkin" data-view hidden></section>
+      <section id="v-progress" data-view hidden></section>
+      <section id="v-perks" data-view hidden></section>
+      <section id="v-helpmenu" data-view hidden></section>
+      <section id="v-help" data-view hidden></section>
+      <section id="v-setup" data-view hidden></section>
+    </main>
+
+    <footer class="foot">
+      Concept prototype made for the Mosaic product challenge, based on Be Bodywise customer research. It is not an official Be Bodywise app. The timelines are general guidance, not the brand's claims or medical advice, and results vary. Version 10 (Full-Stack Edition).
+    </footer>
+  </div>
+
+  <div id="toast" hidden><span></span></div>
+
+  <!-- Modular JS Architecture -->
+  <script src="js/catalog.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
